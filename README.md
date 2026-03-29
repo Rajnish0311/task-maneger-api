@@ -1,15 +1,23 @@
-# Task Manager API
+# 🚀 Task Manager API (Spring Boot + Docker)
 
-**Technologies:** Java, Spring Boot, MySQL, JPA, REST API
+## 📌 Description
+Task Manager API is a backend system to manage user details. It provides full **CRUD functionality** (Create, Read, Update, Delete) using **Spring Boot** and **MySQL**.
 
----
-
-## Description
-Task Manager API is a backend system to manage user details. It provides full **CRUD functionality** (Create, Read, Update, Delete) for user records using a MySQL database.
+The project is fully **containerized using Docker and Docker Compose**, enabling easy setup and consistent deployment.
 
 ---
 
-## Features
+## 🛠️ Technologies
+- Java 17  
+- Spring Boot  
+- Spring Data JPA (Hibernate)  
+- MySQL  
+- Docker & Docker Compose  
+- REST API  
+
+---
+
+## ⚙️ Features
 - Add new user – `POST /api/users/upload`
 - Get user by registration number – `GET /api/users/{registrationNo}`
 - Get all users – `GET /api/users`
@@ -18,31 +26,46 @@ Task Manager API is a backend system to manage user details. It provides full **
 
 ---
 
-## Folder Structure
+## 📁 Folder Structure
 
 task-manager-api/
 ├── src/
 │ └── main/
-│ ├── java/code/rajnish/task_manager/task_manager/
+│ ├── java/code/rajnish/task_maneger/task_maneger/
 │ │ ├── controller/UserController.java
 │ │ ├── model/UserDetails.java
 │ │ ├── repository/UserRepository.java
 │ │ └── service/UserService.java
 │ └── resources/
 │ ├── application.properties
-│ └── data.sql (optional)
-├── .gitignore
+│
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
 ├── pom.xml
-└── README.md 
-## application.properties
+└── README.md
 
-spring.datasource.url=jdbc:mysql://localhost:3306/task_manager_db
+⚙️ application.properties (Docker)
+spring.datasource.url=jdbc:mysql://mysql:3306/taskdb
 spring.datasource.username=root
-spring.datasource.password=yourpassword
+spring.datasource.password=root
 spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
 
+| Method | Endpoint                      | Description    |
+| ------ | ----------------------------- | -------------- |
+| GET    | `/api/users`                  | Get all users  |
+| GET    | `/api/users/{registrationNo}` | Get user by ID |
+| POST   | `/api/users/upload`           | Create user    |
+| PUT    | `/api/users/{registrationNo}` | Update user    |
+| DELETE | `/api/users/{registrationNo}` | Delete user    |
 
+---
+
+## 🐳 Run with Docker (Recommended)
+
+### ▶️ Start Application
+```bash
+docker compose up --build
 ---
 
 ## data.sql (optional)
@@ -78,5 +101,11 @@ mvn spring-boot:run
     },
     "message": "User uploaded successfully!"
 }
+🚧 Challenges Faced
+Maven dependency resolution issues
+Java version mismatch (17 vs 21)
+Docker networking & DB connection timing
+Build failures due to network interruptions
+👨‍💻 Author
 
-
+Rajnish Shiv
