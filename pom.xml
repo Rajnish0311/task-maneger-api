@@ -27,7 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -55,11 +55,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>code.rajnish.task-maneger</groupId>
-			<artifactId>task-maneger</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 
 
 		<dependency>
